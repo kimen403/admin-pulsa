@@ -30,12 +30,8 @@ import 'package:panel_admin_pulsa/domain/usecases/transaksi/get_all_transaksi.da
 import 'package:panel_admin_pulsa/presentation/provider/auth_notifier.dart';
 import 'package:panel_admin_pulsa/presentation/provider/banners_notifier.dart';
 
-import 'package:panel_admin_pulsa/presentation/provider/movie_search_notifier.dart';
-import 'package:panel_admin_pulsa/presentation/provider/popular_movies_notifier.dart';
 import 'package:panel_admin_pulsa/presentation/provider/product_notifier.dart';
-import 'package:panel_admin_pulsa/presentation/provider/top_rated_movies_notifier.dart';
 import 'package:panel_admin_pulsa/presentation/provider/transaksi_notifier.dart';
-import 'package:panel_admin_pulsa/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
@@ -160,26 +156,7 @@ void init() {
   //     removeWatchlist: locator(),
   //   ),
   // );
-  locator.registerFactory(
-    () => MovieSearchNotifier(
-      searchMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => PopularMoviesNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TopRatedMoviesNotifier(
-      getTopRatedMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => WatchlistMovieNotifier(
-      getWatchlistMovies: locator(),
-    ),
-  );
+
   locator.registerFactory(
     () => TransaksiNotifier(
       getAllTransaksi: locator(),
